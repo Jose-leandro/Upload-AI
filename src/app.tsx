@@ -23,7 +23,7 @@ export function App() {
     completion,
     isLoading,
   } = useCompletion({
-    api: "http://localhost:3333/ai/complete",
+    api: "https://upload-ai-server-vakr.onrender.com/ai/complete",
     body: {
       videoId,
       temperature,
