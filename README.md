@@ -28,20 +28,20 @@ Para dar vida ao meu projeto, escolhi a poderosa plataforma de hospedagem Vercel
 
 Neste projeto que desenvolvi, você encontrará uma sinfonia de tecnologias  - Vite.js, React.js e Tailwind CSS, JavaScript, HTML5, CSS3, Git e GitHub, Vercel, - cada uma delas desempenhando um papel vital e único.
 
- React.js:
+ React.js -
  
- Vite.js: 
+ Vite.js - 
 
- TailwindCss:
+ TailwindCss - 
 
- JavaScript: Dando vida, movimento e funcionalidade à experiência.
+ JavaScript -
  
- HTML5: alicerçando tudo com estrutura e organização sólidas.
+ HTML5 -
 
- CSS3: adicionando um toque de estilo e elegância que faz os elementos brilharem.
+ CSS3 -
 
- Git e GitHub: Mantendo o controle do histórico de mudanças e oferecendo uma plataforma aberta para o compartilhamento e hospedagem.
-
- Vercel: 
+ Git e GitHub -
+ 
+ Vercel -
 
 Estas tecnologias não são apenas ferramentas, são os ingredientes secretos que tornam este projeto verdadeiramente espetacular, explore e desfrute do poder que estas tecnologias podem ofereçer!
