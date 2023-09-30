@@ -24,6 +24,24 @@ Para dar vida ao meu projeto, escolhi a poderosa plataforma de hospedagem Vercel
 
 ## *Tecnologias utilizadas no projeto*
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)    ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-Neste projeto que desenvolvi, ser encontra tecnologias como HTML5, CSS3, JavaScript, Git e GitHub, na qual cada uma destas tecnologias, tevê uma determinada função, por exemplo, HTML para organizar e estrutura os elementos da página, CSS para estilizar os elementos escritos na linguagem de marcação neste caso HTML5, JavaScript para dá dinamismo e implementar itens com complexidade, Git para controlar o meu histórico de alterações do projeto e GitHub para armazenar, torná acessível meu código-fonte e hospedagem através do GitHub Pages.
+Neste projeto que desenvolvi, você encontrará uma sinfonia de tecnologias  - Vite.js, React.js e Tailwind CSS, JavaScript, HTML5, CSS3, Git e GitHub, Vercel, - cada uma delas desempenhando um papel vital e único.
+
+ React.js:
+ 
+ Vite.js: 
+
+ TailwindCss:
+
+ JavaScript: Dando vida, movimento e funcionalidade à experiência.
+ 
+ HTML5: alicerçando tudo com estrutura e organização sólidas.
+
+ CSS3: adicionando um toque de estilo e elegância que faz os elementos brilharem.
+
+ Git e GitHub: Mantendo o controle do histórico de mudanças e oferecendo uma plataforma aberta para o compartilhamento e hospedagem.
+
+ Vercel: 
+
+Estas tecnologias não são apenas ferramentas, são os ingredientes secretos que tornam este projeto verdadeiramente espetacular, explore e desfrute do poder que estas tecnologias podem ofereçer!
