@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const api = axios.create({
-    //  Execução de requisições de forma local em sua maquina
+    //  Utilize para realizar solicitações para o servidor local em sua máquina;
     //   baseURL: "http://localhost:3333",
 
-    //  Execução de requisições para o servidor web
+    //  Utilize para realizar solicitações para o servidor web;
     baseURL: "https://upload-ai-server-vakr.onrender.com",
 });

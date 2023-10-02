@@ -8,52 +8,53 @@ import { getFFmpeg } from "@/lib/ffmpeg";
 import { fetchFile } from "@ffmpeg/util";
 import { api } from "@/lib/axios";
 
-type Status = "waiting" | "converting" | "uploading" | "generating" | "success"
+type Status = "waiting" | "converting" | "uploading" | "generating" | "success";
 
 const statusMessage = {
     converting: "Convertendo...",
     generating: "Transcrevendo...",
     uploading: "Carregando",
     success: "Sucesso!"
-}
+};
 
 interface VideoInputFormProps {
-    onVideoUploaded: (id: string) => void
+    onVideoUploaded: (id: string) => void;
 }
 
 export function VideoInputForm(props: VideoInputFormProps) {
 
     const [videoFile, setVideoFile] = useState<File | null>(null);
-    const [status, setStatus] = useState<Status>("waiting")
+    const [status, setStatus] = useState<Status>("waiting");
 
-    const promptInputRef = useRef<HTMLTextAreaElement>(null)
+    const promptInputRef = useRef<HTMLTextAreaElement>(null);
 
     function handleFileSelected(event: ChangeEvent<HTMLInputElement>): void {
-        const { files } = event.currentTarget
+        const { files } = event.currentTarget;
 
         if (!files) {
             return
-        }
+        };
 
         const selectedFile = files[0];
 
-        setVideoFile(selectedFile)
-    }
+        setVideoFile(selectedFile);
+    };
 
     async function convertVideoToAudio(video: File) {
         console.log("Convert started")
 
-        const ffmpeg = await getFFmpeg()
+        const ffmpeg = await getFFmpeg();
 
-        await ffmpeg.writeFile("input.mp4", await fetchFile(video))
+        await ffmpeg.writeFile("input.mp4", await fetchFile(video));
 
+        //  Caso encontre erros durante a conversão para MP3, utilize esta linha de código
         // ffmpeg.on("log", log => {
         //     console.log(log)
         // })
 
         ffmpeg.on("progress", progress => {
             console.log("Convert progress: " + Math.round(progress.progress * 100));
-        })
+        });
 
         await ffmpeg.exec([
             "-i",
@@ -65,67 +66,65 @@ export function VideoInputForm(props: VideoInputFormProps) {
             "-acodec",
             "libmp3lame",
             "output.mp3"
-        ])
+        ]);
 
-        const data = await ffmpeg.readFile("output.mp3")
+        const data = await ffmpeg.readFile("output.mp3");
 
-        const audioFileBlob = new Blob([data], { type: "audio/mpeg" })
+        const audioFileBlob = new Blob([data], { type: "audio/mpeg" });
         const audioFile = new File([audioFileBlob], "output.mp3", {
             type: "audio/mpeg",
-        })
+        });
 
-        console.log("Covert finished.")
+        console.log("Covert finished.");
 
         return audioFile
-    }
+    };
 
     async function handleuploadVideo(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault()
+        event.preventDefault();
 
-        const prompt = promptInputRef.current?.value
+        const prompt = promptInputRef.current?.value;
 
         if (!videoFile) {
             return
-        }
+        };
 
-        // converter o video em áudio
-        setStatus("converting")
+        setStatus("converting");
 
+        const audioFile = await convertVideoToAudio(videoFile);
 
-        const audioFile = await convertVideoToAudio(videoFile)
+        console.log(audioFile);
 
-        console.log(audioFile)
+        const data = new FormData();
 
-        const data = new FormData()
+        data.append("file", audioFile);
 
-        data.append("file", audioFile)
+        setStatus("uploading");
 
-        setStatus("uploading")
+        const response = await api.post("/videos", data);
 
-        const response = await api.post("/videos", data)
+        console.log(response.data);
 
-        console.log(response.data)
+        const videoId = response.data.video.id;
 
-        const videoId = response.data.video.id
-
-        setStatus("generating")
+        setStatus("generating");
 
         await api.post(`/videos/${videoId}/transcription`, {
             prompt,
-        })
+        });
 
-        setStatus("success")
-        
-        props.onVideoUploaded(videoId)
+        setStatus("success");
+
+        props.onVideoUploaded(videoId);
     }
 
     const previewURL = useMemo(() => {
         if (!videoFile) {
             return null
-        }
+        };
 
-        return URL.createObjectURL(videoFile)
-    }, [videoFile])
+        return URL.createObjectURL(videoFile);
+    }, [videoFile]);
 
     return (
         <form onSubmit={handleuploadVideo} className="space-y-6">
@@ -143,7 +142,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
                             <FileVideo className="w-4 h-4" />
                             Selecione um video
                         </>
-                    )}
+                    )};
             </label>
 
             <input type="file" id="video" accept="video/mp4" className="sr-only" onChange={handleFileSelected} />
@@ -159,7 +158,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
                     placeholder="Inclua plavras-chaves mencionadas no video separadas por vírgula (,)"
                 />
                 <Button
-                data-success={status === "success"}
+                    data-success={status === "success"}
                     disabled={status !== "waiting"}
                     type="submit"
                     className="w-full data-[success=true]:bg-emerald-400"
@@ -174,5 +173,5 @@ export function VideoInputForm(props: VideoInputFormProps) {
                 </Button>
             </div>
         </form >
-    )
-}
+    );
+};

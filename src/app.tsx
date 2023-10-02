@@ -12,8 +12,8 @@ import { useState } from "react";
 import { useCompletion } from "ai/react";
 
 export function App() {
-  const [temperature, setTemperature] = useState(0.5)
-  const [videoId, setVideoId] = useState<string | null>(null)
+  const [temperature, setTemperature] = useState(0.5);
+  const [videoId, setVideoId] = useState<string | null>(null);
 
   const {
     input,
@@ -31,14 +31,14 @@ export function App() {
     headers: {
       "Content-type": "application/json",
     }
-  })
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
       <div className="px-6 py-3 flex items-center justify-between border-b">
         <div className="flex justify-evenly items-center">
-        <h1 className="text-xl font-bold">Upload</h1>
-        <img src={Logo} alt="Logo do site" className="max-w-[4.7rem] mx-2 max-h-[4.7rem]"/>
+          <h1 className="text-xl font-bold">Upload</h1>
+          <img src={Logo} alt="Logo do site" className="max-w-[4.7rem] mx-2 max-h-[4.7rem]" />
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">Desenvolvido por José leandro com 💜 no NLW da Rocketseat</span>
@@ -57,15 +57,15 @@ export function App() {
           <div className="grid grid-rows-2 gap-4 flex-1">
             <Textarea
               placeholder="Inclua o prompt para IA..."
-               className="resize-none p-4 leading-relaxed"
-               value={input}
-               onChange={handleInputChange}
+              className="resize-none p-4 leading-relaxed"
+              value={input}
+              onChange={handleInputChange}
             />
             <Textarea
-              placeholder="Resultado gerado por AI..." 
+              placeholder="Resultado gerado por AI..."
               className="resize-none p-4 leading-relaxed"
-               readOnly
-               value={completion}
+              readOnly
+              value={completion}
             />
           </div>
 
@@ -76,14 +76,14 @@ export function App() {
 
         <aside className="w-80 space-y-6">
 
-          <VideoInputForm onVideoUploaded={setVideoId}/>
+          <VideoInputForm onVideoUploaded={setVideoId} />
 
           <Separator />
 
           <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
+            <div className="space-y-2">
               <Label>Prompt</Label>
-                <PromptSelect onPromptSelected={setInput} />
+              <PromptSelect onPromptSelected={setInput} />
             </div>
 
             <div className="space-y-2">
@@ -111,7 +111,7 @@ export function App() {
                 max={1}
                 step={0.1}
                 value={[temperature]}
-                onValueChange={valule => setTemperature(valule[0]) }
+                onValueChange={valule => setTemperature(valule[0])}
               />
               <span className="block text-xs text-muted-foreground italic leading-relaxed">
                 valores mais altos tendem a deixar o resultado mais criativo e com possíveis erros.
@@ -120,8 +120,8 @@ export function App() {
               <Separator />
 
               <Button disabled={isLoading} type="submit" className="w-full">
-                  Executar
-                  <Wand2 className="w-4 h-4 ml-2"/>
+                Executar
+                <Wand2 className="w-4 h-4 ml-2" />
               </Button>
 
             </div>
@@ -129,7 +129,7 @@ export function App() {
         </aside>
       </main>
     </div>
-  )
-}
+  );
+};
 
 
