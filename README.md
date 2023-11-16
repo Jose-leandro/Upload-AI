@@ -7,7 +7,7 @@
 > ### A imagem a seguir
 Ela descrever o primeiro contato que você terá com o projeto.
 
-![Screenshot 2023-09-29 204320](https://github.com/Joseleandro7i/Upload-AI/assets/104599482/0516775d-cc2c-44f3-a53b-0a979be72be5)
+![Screenshot 2023-09-29 204320](https://github.com/Jose-leandro/Upload-AI/assets/104599482/0516775d-cc2c-44f3-a53b-0a979be72be5)
 
 ## *Estado do projeto*
 
@@ -18,7 +18,7 @@ Ela descrever o primeiro contato que você terá com o projeto.
 ## *Hospedagem do projeto*
 
 Para dar vida ao meu projeto, escolhi a poderosa plataforma de hospedagem Vercel, Sinta-se à vontade para explorar cada detalhe e funcionalidade deste projeto clicando neste
-[Link](https://upload-ai-joseleandro7i.vercel.app/)
+[Link](https://upload-ai-jose-leandro.vercel.app/)
 
 
 ## *Tecnologias utilizadas no projeto*
