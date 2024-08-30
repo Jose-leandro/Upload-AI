@@ -53,10 +53,13 @@ Upload ai is more than just a project; it’s a journey of continuous learning a
 
 ## 🚀 Current Status
 
-* ### Version: 0.1
+* ### Version: 0.0.1
 * ### Live Demo: Upload Ai on [Vercel](https://upload-ai-jose-leandro.vercel.app/)
 
-## 🌟 Key Features(In Development)
+## 🌟 Key Features
+- **Content Creation:** Generate engaging titles and content for YouTube publications.
+- **Enhance Your Content:** Optimize your content for better impact and visibility.
+- **Error Correction:** Identify and fix errors or issues in your content.
 
 ## 🛠️ Technologies Used
 This project is a symphony of modern technologies:
@@ -64,8 +67,10 @@ This project is a symphony of modern technologies:
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 	![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)  
 
 ## ⚙️ How It Works
+Upload AI harnesses the power of AI to streamline the YouTube video upload process by automating key tasks. Simply input your video, and the tool will generate eye-catching titles and engaging descriptions tailored to maximize your content's appeal. As you prepare to upload, Upload AI handles the tedious details, ensuring your video is optimized for success. This is just the beginning—future updates will enhance existing features and introduce even more powerful tools to elevate your YouTube experience.
 
 ## 🌱 Inspiration
+This project was developed during my participation in the NLW AI event hosted by Rocketseat. I've always been interested in AI, and this event provided the perfect opportunity to deepen my understanding and create something meaningful that incorporates AI.
 
 ## 🚀 Getting Started
 
