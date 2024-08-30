@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist/server",
+      "types": []
+    },
+    "files": [
+      "src/main.server.ts"
+    ],
+    "include": [
+      "src/**/*.d.ts"
+    ]
+  }
+  
