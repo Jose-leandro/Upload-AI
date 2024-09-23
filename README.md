@@ -2,8 +2,8 @@
 
 # Welcome to Upload Ai
  ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jose-leandro/Upload-AI)
-![GitHub issues](https://img.shields.io/github/issues/jose-leandro/Upload-AI)
-![GitHub](https://img.shields.io/github/license/jose-leandro/Upload-AI)
+![GitHub Issues](https://img.shields.io/github/issues/jose-leandro/Upload-AI)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📚 Table of Contents
 - [Project Overview](#project-overview)
