@@ -27,7 +27,8 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@env/*": ["src/environments/*"]
     }
   },
   "include": [

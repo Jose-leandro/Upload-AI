@@ -1,11 +1,9 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
-import { provideServerRendering } from '@angular/platform-server';
-import { appConfig } from './app.config';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 
-const serverConfig: ApplicationConfig = {
-  providers: [
-    provideServerRendering()
-  ]
-};
-
-export const config = mergeApplicationConfig(appConfig, serverConfig);
+@NgModule({
+  imports: [BrowserModule],
+  bootstrap: [AppComponent]
+})
+export class AppServerModule { }

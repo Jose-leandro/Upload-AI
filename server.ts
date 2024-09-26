@@ -1,10 +1,11 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { ExpressEngine } from '@nguniversal/express-engine';
+
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
-import { AppServerModule } from './src/main.server';
+import { Request, Response } from 'express';
+import { AppServerModule } from './src/app/app.config.server';
+
 
 export function app(): express.Express {
   const server = express();
@@ -25,7 +26,7 @@ export function app(): express.Express {
   }));
 
   // All regular routes use the Angular engine
-  server.get('*', (req, res) => {
+  server.get('*', (req: Request, res: Response) => {
     res.render(indexHtml, { req });
   });
 

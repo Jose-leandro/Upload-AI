@@ -1,0 +1,87 @@
+<!-- src/app/app.component.html -->
+<div class="min-h-screen flex flex-col">
+  <div class="px-6 py-3 flex items-center justify-between border-b">
+    <div class="flex justify-evenly items-center">
+      <h1 class="text-xl font-bold">Upload</h1>
+      <img src="/assets/logo.png" alt="Logo do site" class="max-w-[4.7rem] mx-2 max-h-[4.7rem]" />
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-sm text-muted-foreground">Desenvolvido por José Leandro com 💜 no NLW da Rocketseat</span>
+      <app-separator orientation="vertical" class="h-6"></app-separator>
+      <button class="btn btn-primary">
+        <svg class="w-4 h-4 mr-2" aria-hidden="true">...</svg> <!-- Replace with GitHub icon -->
+        GitHub
+      </button>
+    </div>
+  </div>
+
+  <main class="flex-1 p-6 flex gap-6">
+    <div class="flex flex-col flex-1 gap-4">
+      <app-textarea
+        placeholder="Inclua o prompt para IA..."
+        class="resize-none p-4 leading-relaxed"
+        [(ngModel)]="input"
+        (ngModelChange)="handleInputChange($event)">
+      </app-textarea>
+      <app-textarea
+        placeholder="Resultado gerado por IA..."
+        class="resize-none p-4 leading-relaxed"
+        [value]="completion"
+        readonly >
+      </app-textarea>
+      <!-- <p class="text-sm text-muted-foreground">
+        Lembre-se: você pode utilizar a variável <code class="text-violet-400"> {"{transcription}"} </code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+      </p> -->
+      <p class="text-sm text-muted-foreground">
+        Lembre-se: você pode utilizar a variável
+        <code class="text-violet-400">
+          {{ '{transcription}' }}
+        </code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+      </p>
+    </div>
+
+    <aside class="w-80 space-y-6">
+      <app-video-input-form (videoUploaded)="videoId = $event"></app-video-input-form>
+      <app-separator></app-separator>
+      <form (submit)="handleSubmit($event)" class="space-y-6">
+        <div class="space-y-2">
+          <app-label>Prompt</app-label>
+          <app-prompt-select (promptSelected)="input = $event"></app-prompt-select>
+        </div>
+        <div class="space-y-2">
+          <app-label>Modelo</app-label>
+          <app-select disabled defaultValue="gpt3.5">
+            <app-select-trigger>
+              <app-select-value></app-select-value>
+            </app-select-trigger>
+            <app-select-content>
+              <app-select-item value="gpt3.5">GPT 3.5-turbo 16k</app-select-item>
+            </app-select-content>
+          </app-select>
+          <span class="block text-xs text-muted-foreground italic">Você poderá customizar essa opção em breve</span>
+        </div>
+        <!-- <app-separator></app-separator> -->
+        <hr class="my-4">
+        <div class="space-y-4">
+          <app-label>Temperatura</app-label>
+          <app-slider
+            [min]="0"
+            [max]="1"
+            [step]="0.1"
+            [value]="[temperature]"
+            (valueChange)="temperature = $event[0]">
+          </app-slider>
+          <span class="block text-xs text-muted-foreground italic leading-relaxed">
+            valores mais altos tendem a deixar o resultado mais criativo e com possíveis erros.
+          </span>
+          <app-separator></app-separator>
+          <!-- <button [disabled]="isLoading" type="submit" class="w-full"> -->
+          <button class="btn btn-primary">
+            Executar
+            <svg class="w-4 h-4 ml-2" aria-hidden="true">...</svg> <!-- Replace with Wand2 icon -->
+          </button>
+        </div>
+      </form>
+    </aside>
+  </main>
+</div>
