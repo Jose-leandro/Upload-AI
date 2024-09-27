@@ -20,6 +20,14 @@
 - [Acknowledgments](#acknowledgments)
 - [Author](#author)
 
+## 🎥 Video Presentation
+
+Check out the video presentation of **Upload AI** to see the tool in action! This video showcases its features and capabilities.
+
+[Watch the Video Here](https://github.com/user-attachments/assets/4c2a09b7-a85f-4119-810e-ed40e457e1a1)
+
+
+
 ## 🎯 Project Overview
 
 Upload AI is a YouTube video upload tool that not only simplifies the process, but also generates catchy titles, engaging descriptions, and this is just the beginning, in the future, this tool will have even more amazing features.
