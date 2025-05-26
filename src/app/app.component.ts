@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiService } from './api.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    // RouterOutlet,
+    // FormsModule,
+    // SeparatorComponent,
+    // VideoInputFormComponent,
+    // PromptSelectComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  // styleUrl: './app.component.scss',
 })
 export class AppComponent {
-
   temperature: number = 0.5;
   videoId: string | null = null;
-  
+
   onTemperatureChange(event: Event) {
     const inputValue = parseFloat((event.target as HTMLInputElement).value);
     this.temperature = inputValue;
@@ -21,6 +27,25 @@ export class AppComponent {
 
   setVideoId(id: string | null): void {
     this.videoId = id;
+  }
+
+  input = '';
+  completion = '';
+
+  setInput(value: string) {
+    this.input = value;
+  }
+
+  setTemperature(temp: number) {
+    this.temperature = temp;
+  }
+
+  handleInputChange(event: any) {
+    this.input = event?.target?.value;
+  }
+
+  SelectInput(prompt: string) {
+    this.input = prompt;
   }
 
   // const {
@@ -41,12 +66,12 @@ export class AppComponent {
   //   }
   // });
 
+  constructor(private apiService: ApiService) {}
 
-constructor(private apiService: ApiService) {}
-
-handleSubmit(event: Event) {
-  event.preventDefault();
-  this.apiService.completeRequest(this.videoId, this.temperature).subscribe(response => {
-  });
-}
+  handleSubmit(event: Event) {
+    event.preventDefault();
+    this.apiService
+      .completeRequest(this.videoId, this.temperature)
+      .subscribe((response) => {});
+  }
 }

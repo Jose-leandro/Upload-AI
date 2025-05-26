@@ -1,25 +1,25 @@
-import { FFmpeg } from "@ffmpeg/ffmpeg";
+// import { FFmpeg } from "@ffmpeg/ffmpeg";
 
-import coreURL from "../ffmpeg/ffmpeg-core.js?url"
-import wasmURL from 'src/ffmpeg/ffmpeg-core.wasm';
-import workerURL from "../ffmpeg/ffmpeg-worker.js?url"
+// import coreURL from "../ffmpeg/ffmpeg-core.js?url"
+// import wasmURL from 'src/ffmpeg/ffmpeg-core.wasm';
+// import workerURL from "../ffmpeg/ffmpeg-worker.js?url"
 
-let ffmpeg: FFmpeg | null;
+// let ffmpeg: FFmpeg | null;
 
-export async function getFFmpeg() {
-    if(ffmpeg) {
-        return ffmpeg;
-    };
-    
-    ffmpeg = new FFmpeg();
+// export async function getFFmpeg() {
+//     if(ffmpeg) {
+//         return ffmpeg;
+//     };
 
-    if(!ffmpeg.loaded) {
-        await ffmpeg.load({
-            coreURL,
-            wasmURL,
-            workerURL,
-        });
-    };
+//     ffmpeg = new FFmpeg();
 
-    return ffmpeg;
-};
+//     if(!ffmpeg.loaded) {
+//         await ffmpeg.load({
+//             coreURL,
+//             wasmURL,
+//             workerURL,
+//         });
+//     };
+
+//     return ffmpeg;
+// };

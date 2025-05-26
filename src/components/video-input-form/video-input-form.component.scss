@@ -1,54 +1,54 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../node_modules/bootstrap/scss/bootstrap";
 
-form {
-    margin-bottom: 3px;
-}
+// form {
+//     margin-bottom: 3px;
+// }
 
-.form__lable {
-    position-relative
-    border
-    d-flex
-    rounded-2
-    ratio
-    ratio-16x9
-    border-dashed
-    text-sm
-    flex-col
-    gap-2
-    items-center
-    justify-center
-    text-muted-foreground
+// .form__lable {
+//     position-relative
+//     border
+//     d-flex
+//     rounded-2
+//     ratio
+//     ratio-16x9
+//     border-dashed
+//     text-sm
+//     flex-col
+//     gap-2
+//     items-center
+//     justify-center
+//     text-muted-foreground
 
-    cursor-pointer
+//     cursor-pointer
 
-    :hover
-        bg-primary/5
-}
+//     :hover
+//         bg-primary/5
+// }
 
-.iframe-video {
-    pointer-events: none; 
-    position: absolute; 
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+// .iframe-video {
+//     pointer-events: none; 
+//     position: absolute; 
+//     top: 0; 
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+// }
 
-input {
-    visually-hidden
-}
+// input {
+//     visually-hidden
+// }
 
-.form__div {
-    margin-bottom: 1px;
-}
+// .form__div {
+//     margin-bottom: 1px;
+// }
 
-textarea {
-    height: 80px;
-    line-height: 1.625; 
-    resize: none;
-}
+// textarea {
+//     height: 80px;
+//     line-height: 1.625; 
+//     resize: none;
+// }
 
-button {
-    btn
-    w-100
-}
+// button {
+//     btn
+//     w-100
+// }

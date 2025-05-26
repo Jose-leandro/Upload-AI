@@ -1,9 +1,9 @@
 import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-separator',
   template: ``,
-  styleUrls: ['./separator.component.css'],
 })
 export class SeparatorComponent {
   @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
