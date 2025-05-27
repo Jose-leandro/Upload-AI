@@ -1,1 +1,111 @@
-<div></div>
+<div class="min-vh-100 d-flex flex-column">
+  <div
+    class="px-3 py-2 d-flex align-items-center justify-content-between border-b"
+  >
+    <div class="flex justify-content-around align-items-center">
+      <h1 class="fs-4 fw-bold">Upload</h1>
+      <img
+        src="../assets/logo-site.png"
+        alt="Logo do site"
+        class="mx-2 app-header__logo"
+      />
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <span class="small text-muted"
+        >Desenvolvido por José leandro com 💜 no NLW da Rocketseat</span
+      >
+
+      <button class="btn border border-1 bg-transparent rounded">
+        <i class="bi bi-github"></i>
+
+        GitHub
+      </button>
+    </div>
+  </div>
+
+  <app-separator orientation="horizontal" class="mx-3"></app-separator>
+
+  <main class="d-flex flex-grow-1 p-4 gap-3">
+    <div class="d-flex flex-column flex-grow-1 gap-3">
+      <div class="d-flex flex-column flex-grow-1 gap-3">
+        <textarea
+          placeholder="Inclua o prompt para IA..."
+          class="form-control p-3 lh-relaxed"
+          value="{input}"
+          onChange="{handleInputChange}"
+        ></textarea>
+        <textarea
+          placeholder="Resultado gerado por AI..."
+          class="form-control p-3 lh-relaxed"
+          readOnly
+          value="{completion}"
+        ></textarea>
+      </div>
+
+      <p class="small text-muted">
+        Lembre-se: você pode utilizar a variável
+        <code class="text-primary-emphasis">{{ transcription }}</code> no seu
+        prompt para adicionar o contéudo da transcrição do video selecionado.
+      </p>
+    </div>
+
+    <aside class="video-input-sidebar">
+      <app-video-input-form
+        (videoUploaded)="setVideoId($event)"
+      ></app-video-input-form>
+
+      <app-separator orientation="horizontal" class="mx-3"></app-separator>
+
+      <form (submit)="handleSubmit()" class="vstack gap-4">
+        <div class="vstack gap-2">
+          <label class="form-label">Prompt</label>
+          <app-prompt-select
+            (promptSelected)="setInput($event)"
+          ></app-prompt-select>
+        </div>
+
+        <div class="vstack gap-2">
+          <label class="form-label">Modelo</label>
+
+          <select class="form-select bg-transparent" disabled>
+            <option value="gpt3.5" selected>GPT 3.5-turbo 16k</option>
+          </select>
+          <small class="form-text text-muted fst-italic">
+            Você poderá customizar essa opção em breve
+          </small>
+        </div>
+
+        <app-separator orientation="horizontal" class="my-3"></app-separator>
+
+        <div class="vstack gap-3">
+          <label class="form-label">Temperatura</label>
+          
+        <app-slider
+          [min]="0"
+          [max]="1"
+          [step]="0.1"
+          [value]="[temperature]"
+          (valueChange)="setTemperature($event[0])">
+        </app-slider>
+       
+
+          <small class="form-text text-muted fst-italic">
+            Valores mais altos tendem a deixar o resultado mais criativo e com
+            possíveis erros.
+          </small>
+
+          <app-separator orientation="horizontal" class="my-3"></app-separator>
+
+          <button
+            [disabled]="isLoading"
+            type="submit"
+            class="btn btn-primary w-100"
+          >
+            Executar
+            <!-- <i class="bi bi-magic"></i> Optional Icon -->
+          </button>
+        </div>
+      </form>
+    </aside>
+  </main>
+</div>

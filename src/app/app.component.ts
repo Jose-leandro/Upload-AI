@@ -1,38 +1,48 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ApiService } from './api.service';
-import { FormsModule } from '@angular/forms';
+import { SeparatorComponent } from '../components/ui/separator/separator.component';
+import { VideoInputFormComponent } from '../components/video-input-form/video-input-form.component';
+import { PromptSelectComponent } from '../components/prompt-select/prompt-select.component';
+import { SliderComponent } from '../components/ui/slider/slider.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    // RouterOutlet,
-    // FormsModule,
-    // SeparatorComponent,
-    // VideoInputFormComponent,
-    // PromptSelectComponent,
+    SeparatorComponent,
+    VideoInputFormComponent,
+    PromptSelectComponent,
+    SliderComponent,
   ],
   templateUrl: './app.component.html',
-  // styleUrl: './app.component.scss',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   temperature: number = 0.5;
   videoId: string | null = null;
+
+  onThumbMouseDown() {}
+
+  onThumbKeyDown()  {
+    
+  }
 
   onTemperatureChange(event: Event) {
     const inputValue = parseFloat((event.target as HTMLInputElement).value);
     this.temperature = inputValue;
   }
 
-  setVideoId(id: string | null): void {
+  setVideoId(id: any | null): void {
     this.videoId = id;
   }
 
+  isLoading = '';
   input = '';
   completion = '';
+  transcription = '';
 
-  setInput(value: string) {
+  handleSubmit() {}
+
+  setInput(value: any) {
     this.input = value;
   }
 
@@ -66,12 +76,12 @@ export class AppComponent {
   //   }
   // });
 
-  constructor(private apiService: ApiService) {}
+  // constructor(private apiService: ApiService) {}
 
-  handleSubmit(event: Event) {
-    event.preventDefault();
-    this.apiService
-      .completeRequest(this.videoId, this.temperature)
-      .subscribe((response) => {});
-  }
+  // // handleSubmit(event: Event) {
+  // //   event.preventDefault();
+  // //   this.apiService
+  // //     .completeRequest(this.videoId, this.temperature)
+  // //     .subscribe((response) => {});
+  // // }
 }

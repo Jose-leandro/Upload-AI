@@ -1,54 +1,30 @@
-// @import "../node_modules/bootstrap/scss/bootstrap";
+.video-upload-form {
+    margin: 24px 0px;
+}
 
-// form {
-//     margin-bottom: 3px;
-// }
+.video-upload-form__container {
+  width: 95%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-// .form__lable {
-//     position-relative
-//     border
-//     d-flex
-//     rounded-2
-//     ratio
-//     ratio-16x9
-//     border-dashed
-//     text-sm
-//     flex-col
-//     gap-2
-//     items-center
-//     justify-center
-//     text-muted-foreground
+.video-upload-preview__video {
+  width: 100px;
+  height: 100px;
+}
 
-//     cursor-pointer
+.video-upload-form__transcription {
+  
+}
 
-//     :hover
-//         bg-primary/5
-// }
-
-// .iframe-video {
-//     pointer-events: none; 
-//     position: absolute; 
-//     top: 0; 
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-// }
-
-// input {
-//     visually-hidden
-// }
-
-// .form__div {
-//     margin-bottom: 1px;
-// }
-
-// textarea {
-//     height: 80px;
-//     line-height: 1.625; 
-//     resize: none;
-// }
-
-// button {
-//     btn
-//     w-100
-// }
+.video-upload-hover {
+   border-style: dashed;
+  
+    &:hover {
+      background-color: rgba(var(--bs-primary-rgb), 0.05); // similar to hover:bg-primary/5
+    }
+  }
+  

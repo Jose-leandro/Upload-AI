@@ -1,0 +1,62 @@
+<form onSubmit="{handleuploadVideo}" class="video-upload-form">
+  <label
+    htmlFor="video"
+    class="position-relative border d-flex flex-column rounded cursor-pointer border-dashed text-muted text-small align-items-center justify-content-center video-upload-hover"
+  >
+    <div class="video-upload-form__container position-relative">
+      <video
+        *ngIf="previewURL; else noVideo"
+        [src]="previewURL"
+        [controls]="false"
+        class="video-upload-preview__video pointer-events-none position-absolute top-0 start-0"
+      ></video>
+
+      <ng-template #noVideo>
+        <i class="bi bi-file-earmark-break"></i>
+        Selecione um vídeo
+      </ng-template>
+    </div>
+  </label>
+
+  <input
+    type="file"
+    id="video"
+    accept="video/mp4"
+    class="visually-hidden"
+    onChange="{handleFileSelected}"
+  />
+
+  <app-separator orientation="horizontal" class="mx-3"></app-separator>
+
+  <div class="video-upload-form__transcription">
+    <Label htmlFor="transcription_prompt fw-bold text-white fs-4"
+      >Prompt de transcrição</Label
+    >
+    <textarea
+      #promptInputRef
+      [disabled]="status !== 'waiting'"
+      id="transcription_prompt"
+      class="form-control textarea-custom"
+      placeholder="Inclua palavras-chave mencionadas no vídeo separadas por vírgula (,)"
+    ></textarea>
+
+    <button
+      type="submit"
+      [disabled]="status !== 'waiting'"
+      [attr.data-success]="status === 'success'"
+      [ngClass]="{
+        'btn btn-primary w-100 d-flex align-items-center justify-content-center': true,
+        'bg-success text-white': status === 'success'
+      }"
+    >
+      <ng-container *ngIf="status === 'waiting'; else messageBlock">
+        Carregar vídeo
+        <i class="bi bi-upload ms-2"></i>
+      </ng-container>
+
+      <ng-template #messageBlock>
+        {{ statusMessage[status] }}
+      </ng-template>
+    </button>
+  </div>
+</form>

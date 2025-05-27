@@ -1,0 +1,16 @@
+.separator {
+    background-color: var(--bs-border-color, #dee2e6); 
+    flex-shrink: 0;
+  
+    &--horizontal {
+      height: 1px;
+      width: 100%;
+    }
+  
+    &--vertical {
+      height: 100%;
+      width: 1px;
+    }
+  
+  }
+  

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+$body-bg: hsl(222.2, 84%, 4.9%);
+$body-color: hsl(210, 40%, 98%);
+$border-color: hsl(217.2, 32.6%, 17.5%);
+$border-radius: 1rem;
+
+@import "bootstrap/scss/bootstrap";
+
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --radius: 1rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-family: $font-family-base; // Bootstrap default font-family
+}

@@ -1,12 +1,10 @@
-<Select onValueChange={handlePromptSelected}>
-    <SelectTrigger>
-        <SelectValue placeholder="Selecione um prompt..." />
-    </SelectTrigger>
-    <SelectContent>
-        {prompts?.map(prompt => (
-            <SelectItem key={prompt.id} value={prompt.id}>
-                {prompt.title}
-            </SelectItem>
-        ))}
-    </SelectContent>
-</Select>
+<select
+  class="form-select"
+  [ngModel]="selectedPromptId"
+  (ngModelChange)="handlePromptSelected($event)"
+>
+  <option disabled selected value="">Selecione um prompt...</option>
+  <option *ngFor="let prompt of prompts" [value]="prompt.id">
+    {{ prompt.title }}
+  </option>
+</select>
