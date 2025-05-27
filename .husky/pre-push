@@ -3,7 +3,7 @@
 # Get the current branch name
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
-EXPECTED_REMOTE_URL="https://github.com/Jose-leandro/Stellar.git"
+EXPECTED_REMOTE_URL="https://github.com/Jose-leandro/Upload-AI.git"
 
 # Retrieve the remote URL of the current repository
 REMOTE_URL=$(git config --get remote.origin.url)

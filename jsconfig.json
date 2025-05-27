@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
     "module": "esnext",
     "baseUrl": "./",
-    "moduleResolution": "node",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": false,
+    "lib": ["es2020", "dom"],
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules", "dist", "build"],
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }
